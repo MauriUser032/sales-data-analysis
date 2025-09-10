@@ -1,8 +1,11 @@
 Project 1: Sales Data Analysis (Excel + SQL)
+
 Overview
+
 This project applies data cleaning, exploratory data analysis, and SQL queries on a sales dataset (~2,800 records).
 The goal was to identify sales patterns, the most profitable customers, and seasonality in the business.
 Tools used:
+
 •	Excel → data cleaning, exploratory analysis, pivot tables.
 •	PostgreSQL (pgAdmin 4) → SQL queries.
 •	Visualizations → pivot charts, bar charts, pie charts.
@@ -92,3 +95,4 @@ Key Insights
 •	Revenue concentration is high: few customers generate the majority of sales.
 •	USA is the main market, followed by Spain and France.
 •	Clear seasonality: sales peak in Q4 (November), likely due to holiday season demand.
+
