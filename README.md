@@ -67,52 +67,99 @@ Exploratory Analysis in Excel
  
 
 SQL Queries (PostgreSQL)
+
 Total Sales
+
 SELECT SUM(SALES) AS total_sales
+
 FROM sales_data;
+
+
 Result: USD 10,032,628.85
 
+
 Sales by Year
+
 SELECT YEAR_ID, SUM(SALES) AS total_sales
+
 FROM sales_data
+
 GROUP BY YEAR_ID
+
 ORDER BY YEAR_ID;
+
 Year	Sales
+
 2003	3.5M
+
 2004	4.7M
+
 2005	1.8M
+
+
 
 2004 was the strongest year, accounting for ~47% of total sales.
 
+
 Sales by Country (Top 5)
+
 SELECT COUNTRY, SUM(SALES) AS total_sales
+
 FROM sales_data
+
 GROUP BY COUNTRY
+
 ORDER BY total_sales DESC
+
 LIMIT 5;
+
 Country	Sales
+
 USA	3.62M
+
 Spain	1.21M
+
 France	1.11M
+
 Australia	0.63M
+
 UK	0.47M
+
 USA alone represents over 36% of sales.
 
+
 Sales by Deal Size
+
 SELECT DEALSIZE, SUM(SALES) AS total_sales, COUNT(*) AS num_orders
+
 FROM sales_data
+
 GROUP BY DEALSIZE
+
 ORDER BY total_sales DESC;
+
 Deal Size	Sales	Orders
+
 Medium	6.08M	1,384
+
 Small	2.64M	1,282
+
 Large	1.30M	157
+
+
 Medium-sized deals are both the most frequent and the most profitable.
 
+
 Key Insights
+
 •	Business depends heavily on Classic & Vintage Cars (58% of revenue).
+
 •	Revenue concentration is high: few customers generate the majority of sales.
+
 •	USA is the main market, followed by Spain and France.
+
 •	Clear seasonality: sales peak in Q4 (November), likely due to holiday season demand.
+
+
 
 
