@@ -49,3 +49,32 @@ FROM (
   GROUP BY CUSTOMERNAME, PRODUCTLINE
 ) sub
 WHERE rn <= 3;
+
+-- 8. Top 3 Product Lines per Customer
+SELECT *
+FROM (
+  SELECT CUSTOMERNAME,
+         PRODUCTLINE,
+         SUM(SALES) AS total_sales,
+         ROW_NUMBER() OVER (PARTITION BY CUSTOMERNAME ORDER BY SUM(SALES) DESC) AS rank
+  FROM sales_data
+  GROUP BY CUSTOMERNAME, PRODUCTLINE
+) ranked
+WHERE rank <= 3
+ORDER BY CUSTOMERNAME, rank;
+
+-- 9. Most Frequent Customers (by number of orders)
+SELECT CUSTOMERNAME, COUNT(DISTINCT ORDERNUMBER) AS num_orders
+FROM sales_data
+GROUP BY CUSTOMERNAME
+ORDER BY num_orders DESC
+LIMIT 10;
+
+-- 10. Profit Margin Estimation (MSRP vs PRICEEACH)
+SELECT PRODUCTCODE,
+       PRODUCTLINE,
+       ROUND(AVG(MSRP - PRICEEACH), 2) AS avg_margin
+FROM sales_data
+GROUP BY PRODUCTCODE, PRODUCTLINE
+ORDER BY avg_margin DESC
+LIMIT 10;
