@@ -7,23 +7,42 @@ The goal was to identify sales patterns, the most profitable customers, and seas
 Tools used:
 
 •	Excel → data cleaning, exploratory analysis, pivot tables.
+
 •	PostgreSQL (pgAdmin 4) → SQL queries.
+
 •	Visualizations → pivot charts, bar charts, pie charts.
+
+
 Data Cleaning
+
 •	Initial dataset: 2,822 rows, 25 columns.
+
 Issues found:
+
 •	Missing values in ADDRESSLINE2 (89%), STATE (53%), and POSTALCODE (2.7%).
+
 •	Decimal values with . instead of , (locale issue in Excel).
+
 •	ORDERDATE column mixed between text and valid date formats.
+
 •	PRICEEACH column with inconsistent rounded values (multiples of 100).
+
 Actions taken:
+
 •	Replaced decimal separators (. → ,) for correct numeric parsing in Excel.
+
 •	Normalized dates using “Text to Columns” and converted all to valid date format.
+
 •	Missing STATE replaced with "N/A".
+
 •	Missing POSTALCODE replaced with "Unknown".
+
 •	Created auxiliary column PRICEEACH_clean = SALES / QUANTITYORDERED.
+
 Final result:
+
 2,817 clean rows, no duplicates, no critical inconsistencies.
+
 
 Exploratory Analysis in Excel
 1. Average Sales
@@ -95,4 +114,5 @@ Key Insights
 •	Revenue concentration is high: few customers generate the majority of sales.
 •	USA is the main market, followed by Spain and France.
 •	Clear seasonality: sales peak in Q4 (November), likely due to holiday season demand.
+
 
