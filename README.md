@@ -151,15 +151,13 @@ Medium-sized deals are both the most frequent and the most profitable.
 
 
 Key Insights
+-	Business depends heavily on Classic & Vintage Cars (58% of revenue).
+- Revenue concentration is high: few customers generate the majority of sales.
+-	USA is the main market, followed by Spain and France.
+- Clear seasonality: sales peak in Q4 (November), likely due to holiday season demand.
 
-•	Business depends heavily on Classic & Vintage Cars (58% of revenue).
-
-•	Revenue concentration is high: few customers generate the majority of sales.
-
-•	USA is the main market, followed by Spain and France.
-
-•	Clear seasonality: sales peak in Q4 (November), likely due to holiday season demand.
-
+## License
+MIT License — free to use for portfolio and demonstration purposes.
 
 
 
